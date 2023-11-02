@@ -1,0 +1,31 @@
+/*
+ Name: Quinton Fesq
+ Date: November 2nd 2023
+ File: 10-1
+ 
+ Desription: Write the function int count_letters(string str) that returns a count of all lower case and upper case letters in
+ the string str. No helper functions are allowed to be used within this function.
+ */
+
+#include <iostream>
+
+int count_letters(const std::string& str) {
+    int count = 0;
+    for (char c : str) {
+        if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+            count++;
+        }
+    }
+    return count;
+}
+
+int main() {
+    std::cout << "Enter a sentence: ";
+    std::string input;
+    std::getline(std::cin, input);
+    
+    int result = count_letters(input);
+    std::cout << "Number of letters: " << result << std::endl;
+
+    return 0;
+}
